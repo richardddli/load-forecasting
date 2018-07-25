@@ -1,10 +1,10 @@
 # load-forecasting
 This load forecaster is designed to perform short-term & long-term load forecasting for a 24-hour period.
 
-# Data Source
+## Data Source
 15 min interval load data and hourly temperature data is available [**here**](load_temperature_data.csv) from November 2012 to December 2013 for a sample household in California.
 
-# Model Selection
+## Model Selection
 An Multi-layer Perceptron regressor was selected to model this load data, in order to accommodate the nonlinear interactions of load demand. Eight predictor variables were implemented:
 
 * interpolated temperature \*
@@ -18,7 +18,7 @@ An Multi-layer Perceptron regressor was selected to model this load data, in ord
 
 \* used for short-term forecasting only
 
-# Forecasting a 24 hr period
+## Forecasting a 24 hr period
 You can train the model and perform forecasting over a 24-hr period. The `forecast_date` indicates the start time of the 24-hr interval.
 
 ```python
@@ -34,5 +34,5 @@ forecast_evaluator.cross_validate(load_data='load_temperature_data.csv',
                                   holidays='US Bank holidays.csv', short_term=False)
 ```
 
-# Notebook
+## Notebook
 The [documentation](Methodology%20and%20Key%20Findings.docx) is currently undergoing conversion to a Jupyter notebook.
